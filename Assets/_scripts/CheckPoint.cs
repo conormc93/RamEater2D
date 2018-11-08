@@ -20,7 +20,7 @@ public class CheckPoint : MonoBehaviour {
 	{
 		if (other.name == "Player") {
 			levelManager.currentCheckPoint = gameObject;
-			Debug.Log ("aCTIVATED cHECKPOINT :" + transform.position);
+			Debug.Log ("CHECKPOINT:" + transform.position);
 		}
 
 	}

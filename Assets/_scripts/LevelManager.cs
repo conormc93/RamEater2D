@@ -6,19 +6,17 @@ public class LevelManager : MonoBehaviour {
 
 	public GameObject currentCheckPoint;
 
-	private PlayerController player;
+	private PlayerController player;  
 
-    private float gravityStore;
-
-	//animation
 	public GameObject deathParticle;
 	public GameObject respawnParticle;
 
 	public float respawnDelay;
 
-    public CameraController camera;
-
-	// Use this for initialization
+    private new CameraController camera;
+    private float gravityStore;
+	
+    // Use this for initialization
 	void Start () {
         player = FindObjectOfType<PlayerController>();
         camera = FindObjectOfType<CameraController>();
@@ -31,7 +29,7 @@ public class LevelManager : MonoBehaviour {
 
 	public void RespawnPlayer(){
 		
-		StartCoroutine ("RespawnPlayerCo");
+		StartCoroutine("RespawnPlayerCo");
 	}
 
     public IEnumerator RespawnPlayerCo()
@@ -58,14 +56,13 @@ public class LevelManager : MonoBehaviour {
 
         yield return new WaitForSeconds(respawnDelay);
 
-        //reset player gravity
-        //player.GetComponent<Rigidbody2D>().gravityScale = gravityStore;
-        player.transform.position = currentCheckPoint.transform.position;
+        player.transform.position = new Vector3(currentCheckPoint.transform.position.x, currentCheckPoint.transform.position.y, player.transform.position.z);
 
         // Re enable player
         player.enabled = true;
         player.GetComponent<Renderer>().enabled = true;
         camera.isFollowing = true;
+
         // Instantiate respawn particle where player respawns
         Instantiate(respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
 

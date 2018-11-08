@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-	Rigidbody2D rigid2D;
+
+    Rigidbody2D rigid2D;
+
 	public float moveSpeed;
 	public float jumpHeight=15;
 	public float maxSpeed = 2f;
@@ -17,6 +19,9 @@ public class PlayerController : MonoBehaviour {
 
 	private Animator anim;
 
+    public Transform throwPoint;
+    public GameObject star;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -24,8 +29,14 @@ public class PlayerController : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 	}
 	
-	// Update is called once per frame
+	void FixedUpdate(){
+
+		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGround);
+	}
+    
+    // Update is called once per frame
 	void Update () {
+
 		float move = Input.GetAxis("Horizontal");
 		rigid2D.velocity = new  Vector2(move * maxSpeed, rigid2D.velocity.y);
 
@@ -33,30 +44,43 @@ public class PlayerController : MonoBehaviour {
 			doubleJump = false;
 		
 		anim.SetBool("Grounded",grounded);
+
 		// Your jump code:
 		if (Input.GetKeyDown(KeyCode.Space) && grounded)
 		{
-			//rigid2D.velocity = new Vector2(rigid2D.velocity.x, jum pHeight);
 			Jump();
 		}
+
 		// Your jump code:
 		if (Input.GetKeyDown(KeyCode.Space) && !doubleJump && !grounded)
 		{
-			//rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpHeight);
+			
 			Jump();
 			doubleJump = true;
 		}
+
+        //
+        if(Input.GetKeyDown(KeyCode.X))
+        {
+            Instantiate(star, throwPoint.position, throwPoint.rotation);
+        }
+
 		//set animation
 		anim.SetFloat ("Speed", Mathf.Abs(rigid2D.velocity.x));
-	}
+
+        
+        if (rigid2D.velocity.x > 0)
+            transform.localScale = new Vector3(1f, 1f, 0f);
+        else if(rigid2D.velocity.x < 0)
+            transform.localScale = new Vector3(-1f, 1f, 0f);
+         
+
+    }
 
 	public void Jump(){
 		rigid2D.velocity = new Vector2(rigid2D.velocity.x, jumpHeight);
 	}
 
-	void FixedUpdate(){
-
-		grounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius,whatIsGround);
-	}
+	
 
 }
