@@ -36,13 +36,13 @@ public class LevelManager : MonoBehaviour {
     {
         Debug.Log("DEBUG : Player Respawn");
 
+        // Instantiate death particle where player died
+        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
+
         // Disable the player while respawning
         player.enabled = false;
         player.GetComponent<Renderer>().enabled = false;
         camera.isFollowing = false;
-
-        // Instantiate death particle where player died
-        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
 
         // stop player when respawn
         // player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
