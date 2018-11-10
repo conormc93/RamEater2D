@@ -1625,7 +1625,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 332250142}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.56, y: 1.1201165, z: -9.925781}
+  m_LocalPosition: {x: 17.56, y: 1.1201165, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 706043679}
@@ -2690,11 +2690,6 @@ Prefab:
     - target: {fileID: 1715552848008170, guid: 19a8fbac1b2d69e4a831fe4faca1d6ba, type: 2}
       propertyPath: m_Name
       value: Checkpoint (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 61878761889681140, guid: 19a8fbac1b2d69e4a831fe4faca1d6ba,
-        type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19a8fbac1b2d69e4a831fe4faca1d6ba, type: 2}
@@ -7443,7 +7438,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.025}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.35
 --- !u!50 &1356417007
@@ -8912,7 +8907,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1583725671}
   - component: {fileID: 1583725672}
-  - component: {fileID: 1583725673}
+  - component: {fileID: 1583725674}
   m_Layer: 0
   m_Name: Checkpoint
   m_TagString: Untagged
@@ -8927,8 +8922,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1583725670}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.01, y: -0.31, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -18.24, y: 8, z: 0}
+  m_LocalScale: {x: 1, y: 13.3891, z: 1}
   m_Children: []
   m_Father: {fileID: 332250143}
   m_RootOrder: 1
@@ -8945,8 +8940,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelManager: {fileID: 0}
---- !u!58 &1583725673
-CircleCollider2D:
+--- !u!61 &1583725674
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -8958,8 +8953,18 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 1
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1665211816
 GameObject:
   m_ObjectHideFlags: 0
@@ -11789,7 +11794,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2108309769}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.43, y: 2.89, z: 0}
+  m_LocalPosition: {x: -3.48, y: 2.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1539558560}

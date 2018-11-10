@@ -48,7 +48,7 @@ public class LevelManager : MonoBehaviour {
         // player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         yield return new WaitForSeconds(respawnDelay);
-
+        //player.transform.position = currentCheckPoint.transform.position;
         player.transform.position = new Vector3(currentCheckPoint.transform.position.x, currentCheckPoint.transform.position.y, player.transform.position.z);
 
         // Re enable player
