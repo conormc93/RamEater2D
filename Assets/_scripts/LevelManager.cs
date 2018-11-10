@@ -36,23 +36,16 @@ public class LevelManager : MonoBehaviour {
     {
         Debug.Log("DEBUG : Player Respawn");
 
-        // Instantiate death particle where player died
-        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
-
         // Disable the player while respawning
         player.enabled = false;
         player.GetComponent<Renderer>().enabled = false;
         camera.isFollowing = false;
 
-        // remove gravity when player dies
-        //gravityStore = player.GetComponent<Rigidbody2D>().gravityScale;
-        //player.GetComponent<Rigidbody2D>().gravityScale = 0f;
+        // Instantiate death particle where player died
+        Instantiate(deathParticle, player.transform.position, player.transform.rotation);
 
         // stop player when respawn
-        player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-
-        // Deduct points from score
-        //ScoreManager.AddPoints(-deathPenalty);
+        // player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
         yield return new WaitForSeconds(respawnDelay);
 

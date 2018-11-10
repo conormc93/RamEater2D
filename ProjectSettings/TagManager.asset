@@ -15,11 +15,11 @@ TagManager:
   - 
   - Ground
   - Player
+  - Projectiles
+  - Checkpoints
+  - Collectibles
   - 
-  - 
-  - 
-  - 
-  - 
+  - TriggerZones
   - 
   - 
   - 
