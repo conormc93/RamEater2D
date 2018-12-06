@@ -14,7 +14,8 @@ public class LevelManager : MonoBehaviour {
 	public float respawnDelay;
 
     private new CameraController camera;
-    private float gravityStore;
+
+    public int deathPenalty;
 	
     // Use this for initialization
 	void Start () {
@@ -44,8 +45,8 @@ public class LevelManager : MonoBehaviour {
         player.GetComponent<Renderer>().enabled = false;
         camera.isFollowing = false;
 
-        // stop player when respawn
-        // player.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        // Take away score from player
+        ScoreManager.AddPoints(-deathPenalty);
 
         yield return new WaitForSeconds(respawnDelay);
         //player.transform.position = currentCheckPoint.transform.position;
