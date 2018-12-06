@@ -9,6 +9,14 @@ public class WeaponController : MonoBehaviour {
 
     public PlayerController player;
 
+    public GameObject deathEffect;
+    public GameObject impactEffect;
+
+    public int points;
+    public int damageAmount;
+
+    public float rotationSpeed;
+
 	// Use this for initialization
 	void Start () {
 
@@ -17,8 +25,9 @@ public class WeaponController : MonoBehaviour {
 
         if (player.transform.localScale.x < 0)
         {
-            speed = -speed;
 
+            speed = -speed;
+            rotationSpeed = -rotationSpeed;
         }
 
     }
@@ -27,15 +36,22 @@ public class WeaponController : MonoBehaviour {
 	void Update () {
 
         weaponVelocity.velocity = new Vector2(speed, weaponVelocity.velocity.y);
+
+        weaponVelocity.angularVelocity = rotationSpeed; 
 	}
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Enemy")
         {
-            Destroy(other.gameObject);
+            //Instantiate(deathEffect, other.transform.position, other.transform.rotation);
+            //Destroy(other.gameObject);
+            //ScoreManager.AddPoints(points);
+
+            other.GetComponent<EnemyHealthManager>().takeDamage(damageAmount);
         }
 
+        Instantiate(impactEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }

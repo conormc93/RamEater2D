@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 58046851732399338}
   - component: {fileID: 50910307172096294}
   - component: {fileID: 114049913653401496}
-  m_Layer: 0
+  - component: {fileID: 114185039287138206}
+  m_Layer: 10
   m_Name: PCB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,6 +92,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   player: {fileID: 0}
+  deathEffect: {fileID: 1078427455324544, guid: 288412dff01f186419cbb9f32eceda6f,
+    type: 2}
+  impactEffect: {fileID: 1287531610903534, guid: 576195802d61e204cbc7e68ca5614e40,
+    type: 2}
+  points: 500
+  damageAmount: 1
+  rotationSpeed: -540
+--- !u!114 &114185039287138206
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1844378110754202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82549324350565f48a74fb4076441c14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 5
 --- !u!212 &212624169827015406
 SpriteRenderer:
   m_ObjectHideFlags: 1

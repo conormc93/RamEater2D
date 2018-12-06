@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class LevelManager : MonoBehaviour {
 
+    public GameObject deathParticle;
+	public GameObject respawnParticle;
 	public GameObject currentCheckPoint;
 
-	private PlayerController player;  
-
-	public GameObject deathParticle;
-	public GameObject respawnParticle;
+    private new CameraController camera;
+	private PlayerController player;
+    public HealthManager healthManager;
 
 	public float respawnDelay;
-
-    private new CameraController camera;
+    public float gravityStore;
 
     public int deathPenalty;
-    public float gravityStore;  
+    
 	
     // Use this for initialization
 	void Start () {
@@ -62,6 +62,9 @@ public class LevelManager : MonoBehaviour {
         player.enabled = true;
         player.GetComponent<Renderer>().enabled = true;
         camera.isFollowing = true;
+
+        healthManager.resetHealth();
+        healthManager.notKilled = true;
 
         // Instantiate respawn particle where player respawns
         Instantiate(respawnParticle, currentCheckPoint.transform.position, currentCheckPoint.transform.rotation);
