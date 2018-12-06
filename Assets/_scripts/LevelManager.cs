@@ -16,12 +16,13 @@ public class LevelManager : MonoBehaviour {
     private new CameraController camera;
 
     public int deathPenalty;
+    public float gravityStore;  
 	
     // Use this for initialization
 	void Start () {
         player = FindObjectOfType<PlayerController>();
         camera = FindObjectOfType<CameraController>();
-	}
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -45,12 +46,17 @@ public class LevelManager : MonoBehaviour {
         player.GetComponent<Renderer>().enabled = false;
         camera.isFollowing = false;
 
+        gravityStore = player.GetComponent<Rigidbody2D>().gravityScale;
+        player.GetComponent<Rigidbody2D>().gravityScale = 0f;
+
         // Take away score from player
         ScoreManager.AddPoints(-deathPenalty);
 
         yield return new WaitForSeconds(respawnDelay);
         //player.transform.position = currentCheckPoint.transform.position;
         player.transform.position = new Vector3(currentCheckPoint.transform.position.x, currentCheckPoint.transform.position.y, player.transform.position.z);
+
+        player.GetComponent<Rigidbody2D>().gravityScale = gravityStore;
 
         // Re enable player
         player.enabled = true;
