@@ -13,7 +13,6 @@ public class CameraController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         player = FindObjectOfType<PlayerController>();
-
         isFollowing = true;
 	}
 	

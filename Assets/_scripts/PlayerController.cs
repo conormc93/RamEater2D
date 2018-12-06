@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 	private Animator anim;
 
     public Transform throwPoint;
-    public GameObject star;
+    public GameObject weapon;
 
 	// Use this for initialization
 	void Start () {
@@ -45,13 +45,13 @@ public class PlayerController : MonoBehaviour {
 		
 		anim.SetBool("Grounded",grounded);
 
-		// Your jump code:
+		// Jump Code
 		if (Input.GetKeyDown(KeyCode.Space) && grounded)
 		{
 			Jump();
 		}
 
-		// Your jump code:
+		// Double Jump Code
 		if (Input.GetKeyDown(KeyCode.Space) && !doubleJump && !grounded)
 		{
 			
@@ -59,10 +59,10 @@ public class PlayerController : MonoBehaviour {
 			doubleJump = true;
 		}
 
-        //
+        // Weapon code
         if(Input.GetKeyDown(KeyCode.X))
         {
-            Instantiate(star, throwPoint.position, throwPoint.rotation);
+            Instantiate(weapon, throwPoint.position, throwPoint.rotation);
         }
 
 		//set animation

@@ -10717,7 +10717,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   isFollowing: 1
-  xOffSet: 0
+  xOffSet: 3
   yOffSet: 2
 --- !u!1 &1776225689
 GameObject:
@@ -13356,7 +13356,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   throwPoint: {fileID: 855936817}
-  star: {fileID: 1140822188408284, guid: 338a78c3bc5fc2d4faa152892df343dc, type: 2}
+  weapon: {fileID: 0}
 --- !u!95 &2108309775
 Animator:
   serializedVersion: 3

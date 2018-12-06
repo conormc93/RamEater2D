@@ -2,7 +2,7 @@ fileFormatVersion: 2
 guid: 0bb5a842efd30f14fbf6a632cd5c7b64
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GPJ_2D_Platformer_Sprites_0
+    21300000: PCB
     21300002: Player
     21300004: Ground
     21300006: Spikes
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GPJ_2D_Platformer_Sprites_0
+      name: PCB
       rect:
         serializedVersion: 2
-        x: 49
-        y: 89
-        width: 5
-        height: 8
+        x: 24
+        y: 106
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -378,7 +378,7 @@ TextureImporter:
         width: 4
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -398,7 +398,7 @@ TextureImporter:
         width: 1
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
