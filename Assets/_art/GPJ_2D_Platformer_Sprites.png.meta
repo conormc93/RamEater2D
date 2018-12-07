@@ -17,6 +17,10 @@ TextureImporter:
     21300024: Coin_1
     21300026: Coin_2
     21300028: Coin_3
+    21300030: RAM
+    21300032: RAM_1
+    21300034: RAM_2
+    21300036: RAM_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -233,8 +237,8 @@ TextureImporter:
       name: Player_Walking_2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 112
+        x: 48
+        y: 84
         width: 15
         height: 12
       alignment: 0
@@ -253,8 +257,8 @@ TextureImporter:
       name: enemy_1
       rect:
         serializedVersion: 2
-        x: 64
-        y: 112
+        x: 75
+        y: 53
         width: 16
         height: 12
       alignment: 0
@@ -293,8 +297,8 @@ TextureImporter:
       name: enemy3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 112
+        x: 101
+        y: 107
         width: 16
         height: 12
       alignment: 0
@@ -405,6 +409,86 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2c1a91d289c61a6479db3d4ca58539ae
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RAM
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 106
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a066658aa5815e499f976fe3f2459d3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RAM_1
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 106
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc14e780eed0e1c408b8a0515f655503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RAM_2
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 106
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff60adb28f4d0fb4395a61150011286f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RAM_3
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 106
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfa51519ab5d7b74ba853fef767a6467
       vertices: []
       indices: 
       edges: []

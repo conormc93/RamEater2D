@@ -33,12 +33,18 @@ public class HealthManager : MonoBehaviour {
             notKilled = false;
         }
 
+        if (playerHealth > maxPlayerHealth)
+        {
+            playerHealth = maxPlayerHealth;
+        }
+
         text.text = "" + playerHealth;
 	}
 
     public static void damagePlayer(int damageAmount)
     {
         playerHealth -= damageAmount;
+
     }
 
     public void resetHealth()

@@ -18,7 +18,7 @@ public class DeleteObjectOverTime : MonoBehaviour {
 
         if(lifetime < 0)
         {
-            Destroy(gameObject);
+            Destroy(gameObject); 
         }
 		
 	}

@@ -21,6 +21,7 @@ public class DamagePlayer : MonoBehaviour {
         if (other.name == "Player")
         {
             HealthManager.damagePlayer(damageAmount);
+            other.GetComponent<AudioSource>().Play();
         }
 
     }
