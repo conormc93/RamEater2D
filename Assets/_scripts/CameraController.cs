@@ -20,6 +20,7 @@ public class CameraController : MonoBehaviour {
 	void Update () {
         if (isFollowing)
         {
+            //camera follows the player
             transform.position = new Vector3(player.transform.position.x + xOffSet, player.transform.position.y + yOffSet, transform.position.z);
         }
 	}

@@ -8,6 +8,7 @@ public class DestroyFinishedParticle : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //get a handle on the particle system
 		thisParticleSystem = GetComponent<ParticleSystem> ();
 	}
 	

@@ -19,7 +19,6 @@ public class HealthManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        //text = GetComponent<Text>();
         healthBar = GetComponent<Slider>();
         playerHealth = maxPlayerHealth;
         levelManager = FindObjectOfType<LevelManager>();
@@ -31,6 +30,7 @@ public class HealthManager : MonoBehaviour {
 
         if(playerHealth <=0 && notKilled)
         {
+            //should be resetting the player health after respawning
             playerHealth = 0;
             levelManager.RespawnPlayer();
             notKilled = false;
@@ -45,6 +45,7 @@ public class HealthManager : MonoBehaviour {
         healthBar.value = playerHealth;
 	}
 
+    //method to damage the player and reduce health
     public static void damagePlayer(int damageAmount)
     {
         playerHealth -= damageAmount;

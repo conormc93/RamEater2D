@@ -5,18 +5,18 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour {
 
     Rigidbody2D rigid2D;
+    public Transform wallCheck;
+    public Transform edgeCheck;
+    public LayerMask whatIsWall;
 
     public float moveSpeed;
-    public bool moveRight;
-
-    public Transform wallCheck;
     public float wallCheckRadius;
-    public LayerMask whatIsWall;
+    
+    //booleans to check for whether the enemy
+    //interacts with a wall or the edge of the level
     private bool hittingWall;
-
     private bool notAtEdge;
-    public Transform edgeCheck;
-
+    public bool moveRight;
 
     // Use this for initialization
     void Start () {
@@ -32,6 +32,7 @@ public class EnemyController : MonoBehaviour {
 
         notAtEdge = Physics2D.OverlapCircle(edgeCheck.position, wallCheckRadius, whatIsWall);
 
+        //asssign value of moveRight
         if (hittingWall || !notAtEdge)
         {
             moveRight = !moveRight;
@@ -39,12 +40,15 @@ public class EnemyController : MonoBehaviour {
 
         if (moveRight)
         {
+            //flip the image of the enemy
             transform.localScale = new Vector3(-1f, 1f, 1f);
+            //move the enemy right
             rigid2D.velocity = new Vector2(moveSpeed, rigid2D.velocity.y);
         }
         else
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
+            //move left
             rigid2D.velocity = new Vector2(-moveSpeed, rigid2D.velocity.y);
         }
 		

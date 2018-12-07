@@ -20,8 +20,11 @@ public class EnemyHealthManager : MonoBehaviour {
 		
         if(enemyHealth <= 0)
         {
+            //play the particle effect
             Instantiate(deathEffect, transform.position, transform.rotation);
+            //add points to the score for the player
             ScoreManager.AddPoints(points);
+            //destroy the particle effect
             Destroy(gameObject);
         }
 	}

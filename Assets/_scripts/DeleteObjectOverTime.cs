@@ -14,10 +14,12 @@ public class DeleteObjectOverTime : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        //decrement lifetime of object
         lifetime -= Time.deltaTime;
 
         if(lifetime < 0)
         {
+            //destroy the object 
             Destroy(gameObject); 
         }
 		
